@@ -1,7 +1,7 @@
 import os
 import telebot
 from telebot import types
-
+from app import keep_alive
 import random
 import io
 
@@ -628,5 +628,5 @@ def creatmat(message):
 
 
 # Запускаем бота
-
+keep_alive()
 bot.polling(none_stop=True, interval=0)
