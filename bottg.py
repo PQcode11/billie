@@ -453,7 +453,7 @@ def handle_text_message(message):
             file.close()
 
 
-            bot.send_document(message.chat.id,open(r'https://github.com/PQcode11/billie/blob/main/texted.txt'))
+            bot.send_document(message.chat.id,open(r'texted.txt'))
 
         matsp=open(r"matsp.txt","r")
         if message.text== '/mat':
