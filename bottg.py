@@ -102,7 +102,7 @@ def share_callback(call):
 
     if call.data=='yamat':
         if 'С_' in bot.get_chat_member(-1002206236048,call.from_user.id).custom_title:
-            matsp=open(r"/home/PQcoding09/bot/matsp.txt","r+")
+            matsp=open(r"matsp.txt","r+")
 
             matsp.seek(0,2)
             matsp.write(f'\n')
@@ -476,7 +476,7 @@ def handle_text_message(message):
             pass
 
     #БЛЭКЛИС
-        matsp=open(r"/home/PQcoding09/bot/matsp.txt","r")
+        matsp=open(r"matsp.txt","r")
         global lines
         lines=matsp.read().split('\n')
 
@@ -489,7 +489,7 @@ def handle_text_message(message):
 
                 print(lines)
 
-                filef = open(r"C:\Users\yrsad\Downloads\бот\texted.txt","r")
+                filef = open(r"texted.txt","r")
 
                 ut=int(message.from_user.id)
                 global jk
@@ -512,9 +512,9 @@ def handle_text_message(message):
 
 
 
-                    fileq = open(r"C:\Users\yrsad\Downloads\бот\texted.txt","r+")
+                    fileq = open(r"texted.txt","r+")
                     global numstr
-                    for numstr,line in enumerate(open(r"C:\Users\yrsad\Downloads\бот\texted.txt","r+"),1):
+                    for numstr,line in enumerate(open(r"texted.txt","r+"),1):
                         if str(message.from_user.id) in line:
                             print(f'линия: {line}')
                             print(f'str num: {numstr}')
@@ -548,7 +548,7 @@ def handle_text_message(message):
                     filef.close()
 
                     bot.send_message(message.chat.id,':1')
-                    fileq = open(r"C:\Users\yrsad\Downloads\бот\texted.txt","a+")
+                    fileq = open(r"texted.txt","a+")
 
                     print(fileq.read())
                     fileq.seek(0)
@@ -560,11 +560,11 @@ def handle_text_message(message):
 
                     fileq.seek(0)
                     bot.send_message(message.chat.id,f'&{fileq.read()}')
-                    bot.send_document(message.chat.id,open(r'C:\Users\yrsad\Downloads\бот\texted.txt'))
+                    bot.send_document(message.chat.id,open(r'texted.txt'))
                     print(message.from_user.id,' | ','1')
                     fileq.close()
                     bot.delete_message(message.chat.id,message.message_id)
-                bot.send_document(-1002194368915,open(r"C:\Users\yrsad\Downloads\бот\texted.txt"))
+                bot.send_document(-1002194368915,open(r"texted.txt"))
 
 
 
@@ -606,7 +606,7 @@ def otnosh(message):
 def creatmat(message):
 
     if  message.chat.type!='private' and 'С_' in bot.get_chat_member(-1002206236048,message.from_user.id).custom_title:
-        matsp=open(r"/home/PQcoding09/bot/matsp.txt","r+")
+        matsp=open(r"matsp.txt","r+")
 
         matsp.seek(0,2)
         matsp.write(f'\n')
