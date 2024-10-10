@@ -489,7 +489,7 @@ def handle_text_message(message):
 
                 print(lines)
 
-                filef = open(rtexted.txt","r")
+                filef = open(r"texted.txt","r")
 
                 ut=int(message.from_user.id)
                 global jk
