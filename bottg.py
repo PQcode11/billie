@@ -538,8 +538,10 @@ def handle_text_message(message):
                             fileq.seek(0)
                             fileq.write(newer)
                             fileq.seek(0)
-
-                            bot.delete_message(message.chat.id,message.message_id)
+                            try:
+                                bot.delete_message(message.chat.id,message.message_id)
+                            except Exception:
+                                bot.send_message(message.chat.id,'Error: Не могу удалить сообщение #544')
                             time.sleep(3)
                             print(message.from_user.id,' | ',d)
                             fileq.close()
@@ -585,7 +587,8 @@ def game(message):
                 bot.register_next_step_handler(newmat,game)
                 time.sleep(2)
                 bot.delete_message(message.chat.id,newmat.message_id)
-            except osh234:
+            except Exception:
+                bot.send_message(message.chat.id,'Error: Не могу удалить сообщение #591')
                 bot.register_next_step_handler(newmat,game)
 
 
