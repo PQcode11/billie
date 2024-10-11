@@ -342,7 +342,7 @@ def handle_text_message(message):
 
                 bot.send_message(recipient_id, f'@{sender_id} поцеловал(а) @{repler_id}!', reply_to_message_id=message.message_id)
         #УБИТЬ
-            bot.delete_message(message.chat.id,message.message_id)
+            
 
         elif message.text in ['убить',"Убить"]:
             if message.reply_to_message:
@@ -377,9 +377,9 @@ def handle_text_message(message):
                 recipient_id = message.chat.id
                 repler_id = message.reply_to_message.from_user.username
 
-                bot.send_message(recipient_id, f'@{sender_id} пожелал(а) удачи 🤞 @{repler_id}!', reply_to_message_id=message.message_id)
+                
         #РАССТРЕЛЯТЬ
-            bot.delete_message(message.chat.id,message.message_id)
+            
         elif message.text in ['расстрелять',"Расстрелять"]:
             if message.reply_to_message:
                 sender_id = message.from_user.username
@@ -387,7 +387,7 @@ def handle_text_message(message):
                 repler_id = message.reply_to_message.from_user.username
 
                 bot.send_message(recipient_id, f'@{sender_id} расстрелял(а) @{repler_id}!', reply_to_message_id=message.message_id)
-            bot.delete_message(message.chat.id,message.message_id)
+           
         #ОБНЯТЬ
         elif message.text in ['обнять',"Обнять"]:
             if message.reply_to_message:
@@ -396,7 +396,7 @@ def handle_text_message(message):
                 repler_id = message.reply_to_message.from_user.username
                 bot.send_message(recipient_id, f'@{sender_id} обнял(а) @{repler_id}!', reply_to_message_id=message.message_id)
 
-            bot.delete_message(message.chat.id,message.message_id)
+            
         #УДАЛЯЕМ СОО
         elif message.text=='пока бот':
             bot.send_message (-1002206236048,'Чтож, пора уходить. Надеюсь, мои 336 строк кода были чем-то полезны.\nМожет быть, ещё увидимся, прощайте! ')
@@ -409,8 +409,11 @@ def handle_text_message(message):
 
                 if message.from_user.id== 5647670676:
                     last_message_id = message.reply_to_message.message_id
-                    bot.delete_message(message.chat.id, message.message_id)
-                    bot.delete_message(message.chat.id, last_message_id)
+                    try:
+                        bot.delete_message(message.chat.id, message.message_id)
+                        bot.delete_message(message.chat.id, last_message_id)
+                    except Exception:
+                        bot.send_message(message.chat.id,'Error: Не могу удалить сообщение /del #413')
             #ДУЭЛЬ
         elif message.text in ['дуэль','Дуэль']:
             duel1_id = message.from_user.username
