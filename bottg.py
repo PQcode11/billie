@@ -552,9 +552,9 @@ def handle_text_message(message):
                     bot.send_message(message.chat.id,':1')
                     fileq = open(r"texted.txt","a+")
 
-                    print(fileq.read())
+                    
                     fileq.seek(0)
-                    bot.send_message(message.chat.id,fileq.read())
+                    
                     fileq.write(f'{message.from_user.id}/1\n')
 
 
