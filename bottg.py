@@ -333,7 +333,7 @@ def handle_text_message(message):
 
 
         #ПОЦЕЛОВАТЬ
-            bot.delete_message(message.chat.id,message.message_id)
+            
         elif message.text in ['поцеловать',"Поцеловать"]:
             if message.reply_to_message:
                 sender_id = message.from_user.username
