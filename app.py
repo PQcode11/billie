@@ -12,7 +12,7 @@ def home():
   return "I'm alive"
 
 def run():
-  app.run(host='52.41.36.82' port=80)
+  app.run(host='52.41.36.82', port=80)
 
 def keep_alive():
   t = Thread(target=run)
