@@ -13,7 +13,7 @@ print('Даааа работает боттг')
 
 
 
-bot= telebot.TeleBot('7059307158:AAFbQe_3RfA9SuRoR2GUYvnMK0svk7Hn1CU')
+bot= telebot.TeleBot('7059307158:AAGHOIrTk1GgVs9KTG_UScJW9N1s_sH_nBQ')
 # Создаем экземпляр
 global spallv
 spallv=['']
